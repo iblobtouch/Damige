@@ -25,7 +25,7 @@ class Main extends CI_Controller {
 		
 		$crud->set_table('supplier');
 		$crud->set_subject('supplier');
-		$crud->columns('Supplier_ID', 'Supplier Name', 'Goods Services', 'Based_In');
+		$crud->columns('Supplier_ID', 'Supplier_Name', 'Goods_Services', 'Based_In');
 		$crud->fields('Supplier Name', 'Goods Services', 'Based_In');
 		//$crud->required_fields('itemID', 'itemDesc');
 		//$crud->display_as('itemDesc', 'Description');
@@ -47,8 +47,8 @@ class Main extends CI_Controller {
 		
 		$crud->set_table('driver');
 		$crud->set_subject('driver');
-		$crud->columns('Driver_ID', 'Title', 'Driver name');
-		$crud->fields('Driver_ID','Title', 'Driver name');
+		$crud->columns('Driver_ID', 'Title', 'Driver_name');
+		$crud->fields('Driver_ID','Title', 'Driver_name');
 		//$crud->required_fields('itemID', 'itemDesc');
 		//$crud->display_as('itemDesc', 'Description');
 		
@@ -69,8 +69,8 @@ class Main extends CI_Controller {
 		
 		$crud->set_table('idcard');
 		$crud->set_subject('idcard');
-		$crud->columns('Card_ID', 'Driver Name', 'Start Date', 'End Date');
-		$crud->fields('Card_ID', 'Driver Name', 'Start Date', 'End Date');
+		$crud->columns('Card_ID', 'Driver_Name', 'Start_Date', 'End_Date');
+		$crud->fields('Card_ID', 'Driver_Name', 'Start_Date', 'End_Date');
 		//$crud->required_fields('itemID', 'itemDesc');
 		//$crud->display_as('itemDesc', 'Description');
 		

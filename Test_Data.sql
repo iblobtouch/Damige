@@ -1,4 +1,4 @@
-﻿INSERT INTO `supplier`(`Supplier ID`, `Supplier Name`, `Goods Services`, `Based_In`, `Manager`)
+﻿INSERT INTO `supplier`(`Supplier_ID`, `Supplier_Name`, `Goods_Services`, `Based_In`, `Manager`)
 VALUES (01, "Brenny Cola", "Drinks", "Balmain", "Andy Smith"),
 (02, "Micro Zoft", "IT services", "Balmain", "Mary Jobs"),
 (03, "Food Stuff", "Catering", "Botany Bay", "Zoltan Bey"),
@@ -6,7 +6,7 @@ VALUES (01, "Brenny Cola", "Drinks", "Balmain", "Andy Smith"),
 (05, "Uframed", "CCTV", "Roseville", "Jo Reel"),
 (06, "Burger", "Bits Catering", "Woolwich", "Fred Fats");
 
-INSERT INTO `driver state`(`State_ID`, `Status`, `title`) 
+INSERT INTO `driver_state`(`State_ID`, `Status`, `title`) 
 VALUES (1, "Valid", "Mr"),
 (2, "Valid", "Mr"),
 (3, "Valid", "Mr"),
@@ -20,7 +20,7 @@ VALUES (1, "Valid", "Mr"),
 (11, "Valid", "Mr"),
 (12, "Valid", "Ms");
 
-INSERT INTO `idcard`(`Card_ID`, `Driver Name`, `Start Date`, `End Date`, `State_ID`) 
+INSERT INTO `idcard`(`Card_ID`, `Driver_Name`, `Start_Date`, `End_Date`, `State_ID`) 
 VALUES (1, "Helen Miranda", '2018-04-01', '2018-05-14', 1),
 (2, "Dani Marino", '2018-04-12','2018-05-12', 2),
 (3, "Jose Alves", '2018-04-13', '2018-05-23', 3),
@@ -34,7 +34,7 @@ VALUES (1, "Helen Miranda", '2018-04-01', '2018-05-14', 1),
 (11, "Fred Bloggs", '2018-04-14', '2018-05-11', 11),
 (12, "Olenka Sama", '2018-04-16', '2018-05-27', 12);
 
-INSERT INTO `driver`(`Driver id`, `Title`, `Driver name`, `Supplier ID`, `Card id`) 
+INSERT INTO `driver`(`Driver_ID`, `Title`, `Driver_name`, `Supplier_ID`, `Card_ID`) 
 VALUES (01, "Ms", "Helen Miranda", 01, 01),
 (2, "Mr", "Dani Marino", 01, 02),
 (3, "Mr", "Jose Alves", 02, 03),
@@ -49,7 +49,7 @@ VALUES (01, "Ms", "Helen Miranda", 01, 01),
 (12, "Ms", "Olenka Sama", 06, 12);
 
 
-INSERT INTO `vehicle`(`VRN`, `Make`, `Model`, `Supplier ID`)
+INSERT INTO `vehicle`(`VRN`, `Make`, `Model`, `Supplier_ID`)
 VALUES ("A02 TLC", "Renault", "Master", 01 ),
 ("B03 PPD", "Renault", "Kangoo", 01),
 ("C04 DFD", "Vauxhall", "Vivaro", 02),
@@ -61,7 +61,7 @@ VALUES ("A02 TLC", "Renault", "Master", 01 ),
 ("J10 CSS", "Renault", "Fabia", 06);
 
 
-INSERT INTO `venue`(`Venue ID`, `Stadium`, `Area`, `Phone`, `Address`) 
+INSERT INTO `venue`(`Venue_ID`, `Stadium`, `Area`, `Phone`, `Address`) 
 VALUES (01, "Athletic Centre", "Sidney Olympic Park", "02 9714 7501", "Edwin Flack Avenue"),
 (02, "Aquatic Centre", "Sidney Olympic Park", "02 4920 2941", "Olympic Boulevard"),
 (03, "NSW Golf Course", "Botany Bay", "02 9661 4455", "Anzac Parade"),
@@ -69,7 +69,7 @@ VALUES (01, "Athletic Centre", "Sidney Olympic Park", "02 9714 7501", "Edwin Fla
 
 
 
-INSERT INTO `delivery`(`Delivery ID`, `Venue ID`, `VRN`, `Supplier ID`, `Driver Id`, `Date`)
+INSERT INTO `delivery`(`Delivery_ID`, `Venue_ID`, `VRN`, `Supplier_ID`, `Driver_ID`, `Date`)
 VALUES (01, 01, "D05 RAM", 03, 08, "2018-10-20"),
 (02, 01, "E06 ROM", 03, 06, "2018-10-20"),
 (03, 01, "B03 PPD", 01, 02, "2018-10-20"),
