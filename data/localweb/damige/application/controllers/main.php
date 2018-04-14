@@ -25,7 +25,7 @@ class Main extends CI_Controller {
 		
 		$crud->set_table('supplier');
 		$crud->set_subject('supplier');
-		$crud->columns('Supplier Name', 'Goods Services', 'Based_In');
+		$crud->columns('Supplier_ID', 'Supplier Name', 'Goods Services', 'Based_In');
 		$crud->fields('Supplier Name', 'Goods Services', 'Based_In');
 		//$crud->required_fields('itemID', 'itemDesc');
 		//$crud->display_as('itemDesc', 'Description');
@@ -47,8 +47,8 @@ class Main extends CI_Controller {
 		
 		$crud->set_table('driver');
 		$crud->set_subject('driver');
-		$crud->columns('Title', 'Driver name');
-		$crud->fields('Title', 'Driver name');
+		$crud->columns('Driver_ID', 'Title', 'Driver name');
+		$crud->fields('Driver_ID','Title', 'Driver name');
 		//$crud->required_fields('itemID', 'itemDesc');
 		//$crud->display_as('itemDesc', 'Description');
 		
@@ -69,8 +69,8 @@ class Main extends CI_Controller {
 		
 		$crud->set_table('idcard');
 		$crud->set_subject('idcard');
-		$crud->columns('Driver Name', 'Start Date', 'End Date');
-		$crud->fields('Driver Name', 'Start Date', 'End Date');
+		$crud->columns('Card_ID', 'Driver Name', 'Start Date', 'End Date');
+		$crud->fields('Card_ID', 'Driver Name', 'Start Date', 'End Date');
 		//$crud->required_fields('itemID', 'itemDesc');
 		//$crud->display_as('itemDesc', 'Description');
 		
@@ -91,8 +91,8 @@ class Main extends CI_Controller {
 		
 		$crud->set_table('vehicle');
 		$crud->set_subject('vehicle');
-		$crud->columns('Supplier_Supplier ID', 'Make', 'Model');
-		$crud->fields('Supplier_Supplier ID', 'Make', 'Model');
+		$crud->columns('Supplier_ID', 'Make', 'Model');
+		$crud->fields('Supplier_ID', 'Make', 'Model');
 		//$crud->required_fields('itemID', 'itemDesc');
 		//$crud->display_as('itemDesc', 'Description');
 		
@@ -113,8 +113,8 @@ class Main extends CI_Controller {
 		
 		$crud->set_table('delivery');
 		$crud->set_subject('delivery');
-		$crud->columns('Delivery ID', 'Supplier_Supplier ID', 'Vehicle_VRN', 'Venue_Venue ID');
-		$crud->fields('Delivery ID', 'Supplier_Supplier ID', 'Vehicle_VRN', 'Venue_Venue ID');
+		$crud->columns('Delivery_ID', 'Supplier_ID', 'Vehicle_VRN', 'Venue_ID');
+		$crud->fields('Delivery_ID', 'Supplier_ID', 'Vehicle_VRN', 'Venue_ID');
 		//$crud->required_fields('itemID', 'itemDesc');
 		//$crud->display_as('itemDesc', 'Description');
 		
@@ -135,8 +135,8 @@ class Main extends CI_Controller {
 		
 		$crud->set_table('venue');
 		$crud->set_subject('venue');
-		$crud->columns('Venue ID', 'Area', 'Address', 'Phone');
-		$crud->fields('Venue ID', 'Area', 'Address', 'Phone');
+		$crud->columns('Venue_ID', 'Area', 'Address', 'Phone');
+		$crud->fields('Venue_ID', 'Area', 'Address', 'Phone');
 		//$crud->required_fields('itemID', 'itemDesc');
 		//$crud->display_as('itemDesc', 'Description');
 		
