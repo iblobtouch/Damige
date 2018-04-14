@@ -5,24 +5,36 @@ VALUES (01, "Brenny Cola", "Drinks", "Balmain", "Andy Smith"),
 (04, "Muscletone", "Gym equipment", "Woolwich", "Mas Mckenzie"),
 (05, "Uframed", "CCTV", "Roseville", "Jo Reel"),
 (06, "Burger", "Bits Catering", "Woolwich", "Fred Fats");
-	
 
-INSERT INTO `idcard`(`Card ID`, `Driver Name`, `Start Date`, `End Date`) 
-VALUES (1, "Helen Miranda", '2018-04-01', '2018-05-14'),
-(2, "Dani Marino", '2018-04-12','2018-05-12'),
-(3, "Jose Alves", '2018-04-13', '2018-05-23'),
-(4, "Maria Partou", '2018-04-16', '2018-05-22'),
-(5, "Guy Redmond", '2018-04-03', '2018-05-12'),
-(6, "Vito Gelato", '2018-04-02', '2018-05-24'),
-(7, "David César", '2018-04-11', '2018-05-22'),
-(8, "Lindsay White", '2018-04-04', '2018-05-05'),
-(9, "David Beckham", '2018-04-06', '2018-05-07'),
-(10, "Marcos Alves", '2018-04-09', '2018-05-17'),
-(11, "Fred Bloggs", '2018-04-14', '2018-05-11'),
-(12, "Olenka Sama", '2018-04-16', '2018-05-27');
+INSERT INTO `driver state`(`State_ID`, `Status`, `title`) 
+VALUES (1, "Valid", "Mr"),
+(2, "Valid", "Mr"),
+(3, "Valid", "Mr"),
+(4, "Valid", "Ms"),
+(5, "Valid", "Mr"),
+(6, "Valid", "Mr"),
+(7, "Valid", "Mr"),
+(8, "Valid", "Ms"),
+(9, "Valid", "Mr"),
+(10, "Valid", "Mr"),
+(11, "Valid", "Mr"),
+(12, "Valid", "Ms");
 
+INSERT INTO `idcard`(`Card_ID`, `Driver Name`, `Start Date`, `End Date`, `State_ID`) 
+VALUES (1, "Helen Miranda", '2018-04-01', '2018-05-14', 1),
+(2, "Dani Marino", '2018-04-12','2018-05-12', 2),
+(3, "Jose Alves", '2018-04-13', '2018-05-23', 3),
+(4, "Maria Partou", '2018-04-16', '2018-05-22', 4),
+(5, "Guy Redmond", '2018-04-03', '2018-05-12', 5),
+(6, "Vito Gelato", '2018-04-02', '2018-05-24', 6),
+(7, "David César", '2018-04-11', '2018-05-22', 7),
+(8, "Lindsay White", '2018-04-04', '2018-05-05', 8),
+(9, "David Beckham", '2018-04-06', '2018-05-07', 9),
+(10, "Marcos Alves", '2018-04-09', '2018-05-17', 10),
+(11, "Fred Bloggs", '2018-04-14', '2018-05-11', 11),
+(12, "Olenka Sama", '2018-04-16', '2018-05-27', 12);
 
-INSERT INTO `driver`(`Driver id`, `Title`, `Driver name`, `Supplier_Supplier ID`, `Driver Id Card_Card id`) 
+INSERT INTO `driver`(`Driver id`, `Title`, `Driver name`, `Supplier ID`, `Card id`) 
 VALUES (01, "Ms", "Helen Miranda", 01, 01),
 (2, "Mr", "Dani Marino", 01, 02),
 (3, "Mr", "Jose Alves", 02, 03),
@@ -37,7 +49,7 @@ VALUES (01, "Ms", "Helen Miranda", 01, 01),
 (12, "Ms", "Olenka Sama", 06, 12);
 
 
-INSERT INTO `vehicle`(`VRN`, `Make`, `Model`, `Supplier_Supplier ID`)
+INSERT INTO `vehicle`(`VRN`, `Make`, `Model`, `Supplier ID`)
 VALUES ("A02 TLC", "Renault", "Master", 01 ),
 ("B03 PPD", "Renault", "Kangoo", 01),
 ("C04 DFD", "Vauxhall", "Vivaro", 02),
@@ -57,7 +69,7 @@ VALUES (01, "Athletic Centre", "Sidney Olympic Park", "02 9714 7501", "Edwin Fla
 
 
 
-INSERT INTO `delivery`(`Delivery ID`, `Venue_Venue ID`, `Vehicle_VRN`, `Supplier_Supplier ID`, `Driver_Driver Id`, `Date`)
+INSERT INTO `delivery`(`Delivery ID`, `Venue ID`, `VRN`, `Supplier ID`, `Driver Id`, `Date`)
 VALUES (01, 01, "D05 RAM", 03, 08, "2018-10-20"),
 (02, 01, "E06 ROM", 03, 06, "2018-10-20"),
 (03, 01, "B03 PPD", 01, 02, "2018-10-20"),
