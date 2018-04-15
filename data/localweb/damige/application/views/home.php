@@ -10,14 +10,19 @@
 </head>
 <body>
 
-<h1>International Widgets Management System</h1>
+<h1>DAMIGE SYSTEM</h1>
 
-<p class="p-centre">This system allows staff at International Widgets to manage stocked items, customers and orders.</p>
+<p class="p-centre">This system allows staff and the Registration and Id Office (RIO) at Invicitus Games Events to manage Deliveries.</p>
 <p class="p-centre">Click one of the navigation links to begin.</p>
 
 <div align="center">
-	<img id="cogs" src="assets/images/cogs.jpg" alt="Cogs and gears" height="260" width="380">
-	<!--Image credits: http://www.wallpaperdecor.com.au/murals/scandinavian-wallpaper-decor/typography-collection/cogs-gears-e21324/ -->
+	<form action="Validate.php" method="post">
+        VRN: <input type="text" name="VRN" required><br>
+        Driver-ID: <input type="text" name="ID" required><br>
+        Venue: <input type="text" name="venue" required><br>
+        Date: <input type="date" name="date" required><br>
+        <input type="submit">
+    </form>
 </div>
 </body>
 </html>

@@ -65,6 +65,7 @@ $autoload['libraries'] = array();
 */
 
 $autoload['helper'] = array();
+$autoload['helper'] = array('form');
 
 
 /*
@@ -110,7 +111,6 @@ $autoload['language'] = array();
 */
 
 $autoload['model'] = array();
-
 
 /* End of file autoload.php */
 /* Location: ./application/config/autoload.php */

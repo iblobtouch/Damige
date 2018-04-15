@@ -49,7 +49,7 @@ class Main extends CI_Controller {
 		$crud->set_subject('driver');
 		$crud->columns('Driver_ID', 'Title', 'Driver_name');
 		$crud->fields('Driver_ID','Title', 'Driver_name');
-		//$crud->required_fields('itemID', 'itemDesc');
+		$crud->required_fields('Driver_ID');
 		//$crud->display_as('itemDesc', 'Description');
 		
 		$output = $crud->render();
@@ -173,4 +173,9 @@ class Main extends CI_Controller {
 		$this->load->view('header');
 		$this->load->view('blank_view');
 	}
+    
+    public function validate() {
+        $form_data = $this->input->post();
+        echo $form_data;
+    }
 }
