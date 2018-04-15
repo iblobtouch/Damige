@@ -4,7 +4,7 @@
 <?php
     $this->load->database();
     
-    echo $this->db->query('SELECT * FROM driver');
+    echo $this->db->query('SELECT * FROM delivery');
     
     echo $result ;
 ?>

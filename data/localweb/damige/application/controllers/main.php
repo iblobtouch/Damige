@@ -17,6 +17,31 @@ class Main extends CI_Controller {
 		$this->load->view('home');
 	}
     
+    public function Remove_All_Drivers($primary_key) {
+        
+        $sql = "DELETE dl1 FROM delivery dl1 JOIN driver dr1 ON dl1.Driver_ID = dr1.Driver_ID 
+        WHERE dr1.Supplier_ID ='" . $primary_key . "'";
+        $this->db->query($sql, array($id));
+
+        $sql = "DELETE d1 FROM driver d1 
+        WHERE d1.Supplier_ID ='" . $primary_key . "'";
+        $this->db->query($sql, array($id));
+
+        $sql = "DELETE i1 FROM idCard i1 JOIN driver dr1 ON i1.Card_ID = dr1.Card_ID 
+        WHERE dr1.Supplier_ID ='" . $primary_key . "'";
+        $this->db->query($sql, array($id));
+
+        $sql = "DELETE v1 FROM vehicle v1 
+        WHERE v1.Supplier_ID ='" . $primary_key . "'";
+        $this->db->query($sql, array($id));
+
+        $sql = "DELETE s1 FROM supplier s1 
+        WHERE s1.Supplier_ID ='" . $primary_key . "'";
+        $this->db->query($sql, array($id));
+        
+        return true;
+    }
+    
     public function supplier()
 	{	
 		$this->load->view('header');
@@ -29,6 +54,8 @@ class Main extends CI_Controller {
 		$crud->fields('Supplier Name', 'Goods Services', 'Based_In');
 		//$crud->required_fields('itemID', 'itemDesc');
 		//$crud->display_as('itemDesc', 'Description');
+        
+        $crud->callback_delete(array($this,'Remove_All_Drivers'));
 		
 		$output = $crud->render();
 		$this->supplier_output($output);
@@ -39,6 +66,20 @@ class Main extends CI_Controller {
 		$this->load->view('supplier_view.php', $output);
 	}
     
+    public function Remove_Invalid_Deliveries($primary_key) {
+        
+        $sql = "DELETE d1 FROM delivery d1 WHERE d1.Driver_ID ='" . $primary_key . "'";
+        $this->db->query($sql, array($id));
+        
+        $sql = "DELETE d1 FROM driver d1 WHERE d1.Card_ID ='" . $primary_key . "'";
+        $this->db->query($sql, array($id));
+        
+        $sql = "DELETE i1 FROM idCard i1 WHERE i1.Card_ID ='" . $primary_key . "'";
+        $this->db->query($sql, array($id));
+        
+        return true;
+    }
+    
     public function driver()
 	{	
 		$this->load->view('header');
@@ -47,11 +88,11 @@ class Main extends CI_Controller {
 		
 		$crud->set_table('driver');
 		$crud->set_subject('driver');
-		$crud->columns('Driver_ID', 'Title', 'Driver_name');
-		$crud->fields('Driver_ID','Title', 'Driver_name');
 		$crud->required_fields('Driver_ID');
 		//$crud->display_as('itemDesc', 'Description');
 		
+        $crud->callback_delete(array($this,'Remove_Invalid_Deliveries'));
+        
 		$output = $crud->render();
 		$this->driver_output($output);
 	}
@@ -61,6 +102,16 @@ class Main extends CI_Controller {
 		$this->load->view('driver_view.php', $output);
 	}
     
+    public function Remove_Invalid_Drivers($primary_key) {
+        $sql = "UPDATE idCard i1 SET i1.Status = 'Expired' WHERE i1.Card_ID ='" . $primary_key . "'";
+        $this->db->query($sql, array($id));
+        
+        $sql = "DELETE d1 FROM delivery d1 WHERE d1.Driver_ID ='" . $primary_key . "'";
+        $this->db->query($sql, array($id));
+        
+        return true;
+    }
+    
     public function driverId()
 	{	
 		$this->load->view('header');
@@ -69,10 +120,12 @@ class Main extends CI_Controller {
 		
 		$crud->set_table('idcard');
 		$crud->set_subject('idcard');
-		$crud->columns('Card_ID', 'Driver_Name', 'Start_Date', 'End_Date');
-		$crud->fields('Card_ID', 'Driver_Name', 'Start_Date', 'End_Date');
 		//$crud->required_fields('itemID', 'itemDesc');
 		//$crud->display_as('itemDesc', 'Description');
+        
+        //$crud->set_relation('State_ID', 'driver_state', 'State_ID');
+        
+        $crud->callback_delete(array($this,'Remove_Invalid_Drivers'));
 		
 		$output = $crud->render();
 		$this->driverId_output($output);
@@ -113,8 +166,8 @@ class Main extends CI_Controller {
 		
 		$crud->set_table('delivery');
 		$crud->set_subject('delivery');
-		$crud->columns('Delivery_ID', 'Supplier_ID', 'Vehicle_VRN', 'Venue_ID');
-		$crud->fields('Delivery_ID', 'Supplier_ID', 'Vehicle_VRN', 'Venue_ID');
+		$crud->columns('Delivery_ID', 'Supplier_ID', 'VRN', 'Venue_ID', 'Driver_ID');
+		$crud->fields('Delivery_ID', 'Supplier_ID', 'VRN', 'Venue_ID', 'Driver_ID');
 		//$crud->required_fields('itemID', 'itemDesc');
 		//$crud->display_as('itemDesc', 'Description');
 		

@@ -3,7 +3,7 @@
 
 <?php
     $servername = "localhost";
-    $username = "Iblob";
+    $username = "root";
     $password = "";
     $dbname = "damige";
     
