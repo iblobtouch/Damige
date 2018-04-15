@@ -22,8 +22,20 @@
     
     if ($result->num_rows > 0) {
         echo "Delivery authorised, have a nice day";
+        
+        $sql = "INSERT INTO `logs`(`Type`, `Description`, `Date`) 
+VALUES ('Delivery Attempt', 'Valid Delivery', STR_TO_DATE('" . $_POST["date"] . "', '%Y-%m-%d'));";
+        
+        echo $sql;
+        $result = $conn->query($sql);
     } else {
         echo "Delivery Not authorised, please wait for assistance";
+        
+        $sql = "INSERT INTO `logs`(`Type`, `Description`, `Date`) 
+VALUES ('Delivery Attempt', 'Invalid Delivery', STR_TO_DATE('" . $_POST["date"] . "', '%Y-%m-%d'));";
+        
+        echo $sql;
+        $result = $conn->query($sql);
     }
     
 $conn->close();

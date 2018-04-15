@@ -148,6 +148,29 @@ class Main extends CI_Controller {
 	{
 		$this->load->view('venue_view.php', $output);
 	}
+    
+    public function logs()
+	{	
+		$this->load->view('header');
+		$crud = new grocery_CRUD();
+		$crud->set_theme('datatables');
+		
+		$crud->set_table('logs');
+		$crud->set_subject('logs');
+		$crud->columns('LogID', 'Type', 'Date', 'Description');
+		$crud->fields('LogID', 'Type', 'Date', 'Description');
+		//$crud->required_fields('itemID', 'itemDesc');
+		//$crud->display_as('itemDesc', 'Description');
+		
+		$output = $crud->render();
+		$this->log_output($output);
+	}
+	
+	function log_output($output = null)
+	{
+		$this->load->view('logs_view.php', $output);
+	}
+	
 	
 	
 	public function querynav()

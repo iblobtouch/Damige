@@ -23,6 +23,7 @@
         <li><a href='<?php echo site_url('main/vehicle')?>'>Vehicles</a></li>
         <li><a href='<?php echo site_url('main/delivery')?>'>Deliveries</a></li>
         <li><a href='<?php echo site_url('main/venue')?>'>Venues</a></li>
+        <li><a href='<?php echo site_url('main/logs')?>'>Logs</a></li>
 		
 			<ul id="rightnav">
 			<!--
