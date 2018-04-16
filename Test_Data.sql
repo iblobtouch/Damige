@@ -6,19 +6,19 @@ VALUES (01, "Brenny Cola", "Drinks", "Balmain", "Andy Smith"),
 (05, "Uframed", "CCTV", "Roseville", "Jo Reel"),
 (06, "Burger", "Bits Catering", "Woolwich", "Fred Fats");
 
-INSERT INTO `idcard`(`Card_ID`, `Driver_Name`, `Start_Date`, `End_Date`, `Status`) 
-VALUES (1, "Helen Miranda", '2018-04-01', '2018-05-14', 'Valid'),
-(2, "Dani Marino", '2018-04-12','2018-05-12', 'Valid'),
-(3, "Jose Alves", '2018-04-13', '2018-05-23', 'Valid'),
-(4, "Maria Partou", '2018-04-16', '2018-05-22', 'Valid'),
-(5, "Guy Redmond", '2018-04-03', '2018-05-12', 'Valid'),
-(6, "Vito Gelato", '2018-04-02', '2018-05-24', 'Valid'),
-(7, "David César", '2018-04-11', '2018-05-22', 'Valid'),
-(8, "Lindsay White", '2018-04-04', '2018-05-05', 'Valid'),
-(9, "David Beckham", '2018-04-06', '2018-05-07', 'Valid'),
-(10, "Marcos Alves", '2018-04-09', '2018-05-17', 'Valid'),
-(11, "Fred Bloggs", '2018-04-14', '2018-05-11', 'Valid'),
-(12, "Olenka Sama", '2018-04-16', '2018-05-27', 'Valid');
+INSERT INTO `idcard`(`Card_ID`, `Start_Date`, `End_Date`, `Status`) 
+VALUES (1, '2018-04-01', '2018-05-14', 'Valid'),
+(2, '2018-04-12','2018-05-12', 'Valid'),
+(3, '2018-04-13', '2018-05-23', 'Valid'),
+(4, '2018-04-16', '2018-05-22', 'Valid'),
+(5, '2018-04-03', '2018-05-12', 'Valid'),
+(6, '2018-04-02', '2018-05-24', 'Valid'),
+(7, '2018-04-11', '2018-05-22', 'Valid'),
+(8, '2018-04-04', '2018-05-05', 'Valid'),
+(9, '2018-04-06', '2018-05-07', 'Valid'),
+(10, '2018-04-09', '2018-05-17', 'Valid'),
+(11, '2018-04-14', '2018-05-11', 'Valid'),
+(12, '2018-04-16', '2018-05-27', 'Valid');
 
 INSERT INTO `driver`(`Driver_ID`, `Title`, `Driver_name`, `Supplier_ID`, `Card_ID`) 
 VALUES (01, "Ms", "Helen Miranda", 01, 01),
@@ -66,4 +66,7 @@ VALUES (01, 01, "D05 RAM", 03, 08, "2018-10-20"),
 (08, 02, "D05 RAM", 03, 06, "2018-10-22"),
 (09, 04, "A02 TLC", 01, 02, "2018-10-20"),
 (10, 01, "C04 DFD", 02, 04, "2018-10-23");
+
+INSERT INTO `users`(`User_ID`, `username`, `password``)
+VALUES (1, 'admin', 'password');
 

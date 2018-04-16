@@ -17,8 +17,15 @@
 </head>
 
 </body>
+    
+<?php
+session_start();
+if(!isset($_SESSION['login'])){ //if login in session is not set
+    header("Location: /damige/login.php");
+}
+?>
+
 <p style="font-family:courier;">This system allows staff and the Registration and Id Office (RIO) at Invicitus Games Events to manage Deliveries.</p>
-<p style="font-family:courier;">Click one of the navigation links to begin.</p>
 	<div>
 		<ul id="nav">
 		<li><a href='<?php echo site_url('')?>'>Home</a></li>
